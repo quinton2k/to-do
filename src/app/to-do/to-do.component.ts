@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-to-do',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./to-do.component.css']
 })
 export class ToDoComponent implements OnInit {
-
-  constructor() { }
+  toDoForm!: FormGroup;
+  
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.toDoForm = this.formBuilder.group({
+      item: ['', Validators.required]
+    })
   }
 
 }
