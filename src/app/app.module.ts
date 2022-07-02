@@ -10,7 +10,8 @@ import { ToDoComponent } from './to-do/to-do.component'
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field'
-import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatToolbarModule,
     MatCardModule,
     MatFormFieldModule,
-    MatIconModule
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
