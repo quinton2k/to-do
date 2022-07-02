@@ -8,7 +8,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ToDoComponent implements OnInit {
   toDoForm!: FormGroup;
-  
+  tasks: any [] = [];
+  inProgress: any [] = [];
+  done: any [] = [];
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
