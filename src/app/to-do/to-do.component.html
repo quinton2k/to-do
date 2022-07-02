@@ -12,7 +12,32 @@
                 </form>
             </mat-card>
         </div>
-        <div class="col-9">2</div>
+        <div class="col-9">
+            <div cdkDropListGroup>
+                <div class="row">
+                    <div class="col-4">
+                        <!-- todo -->
+                        <div class="example-container">
+                            <h2>To do</h2>
+
+                            <div
+                              cdkDropList
+                              [cdkDropListData]="tasks"
+                              class="example-list"
+                              (cdkDropListDropped)="drop($event)">
+                              <div class="example-box" *ngFor="let item of tasks" cdkDrag>{{item}}</div>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-4">
+                        <!-- in progress -->
+                    </div>
+                    <div class="col-4">
+                        <!-- done -->
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>
