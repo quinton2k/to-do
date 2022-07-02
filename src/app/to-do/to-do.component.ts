@@ -21,6 +21,14 @@ export class ToDoComponent implements OnInit {
     })
   }
 
+  addTask() {
+    this.tasks.push(
+      {
+        description: this.toDoForm.value.item,
+        done: false
+      }
+    )
+  }
   drop(event: CdkDragDrop<ITask[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);

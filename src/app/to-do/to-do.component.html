@@ -8,7 +8,7 @@
                         <input formControlName="item" matInput placeholder="To-do">
                     </mat-form-field>
                     <h5 *ngIf="toDoForm.invalid && toDoForm.touched">Fill in this field before adding</h5>
-                    <button mat-flat-button color="primary"[disabled]="toDoForm.invalid">Add</button>
+                    <button (click)="addTask()" color="primary"[disabled]="toDoForm.invalid">Add</button>
                 </form>
             </mat-card>
         </div>
@@ -24,7 +24,7 @@
                               [cdkDropListData]="tasks"
                               class="example-list"
                               (cdkDropListDropped)="drop($event)">
-                              <div class="example-box" *ngFor="let item of tasks" cdkDrag>{{item}}</div>
+                              <div class="example-box" *ngFor="let item of tasks" cdkDrag>{{ item.description }}</div>
                             </div>
                           </div>
                     </div>
@@ -37,7 +37,7 @@
                             [cdkDropListData]="inProgress"
                             class="example-list"
                             (cdkDropListDropped)="drop($event)">
-                            <div class="example-box" *ngFor="let item of inProgress" cdkDrag>{{item}}</div>
+                            <div class="example-box" *ngFor="let item of inProgress" cdkDrag>{{ item.description }}</div>
                           </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                             [cdkDropListData]="done"
                             class="example-list"
                             (cdkDropListDropped)="drop($event)">
-                            <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+                            <div class="example-box" *ngFor="let item of done" cdkDrag>{{ item.description }}</div>
                           </div>
                         </div>
                     </div>
