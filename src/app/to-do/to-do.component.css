@@ -2,12 +2,15 @@
   background-color: #393E46;
   padding-top: 30px;
 }
+
 .row > .col-3 {
   padding-top: 40px
 }
+
 h2 {
   text-align: center;
 }
+
 .mat-form-field {
     width: 100%;
 }
@@ -75,11 +78,14 @@ h2 {
 
 /* ADD */
 .add {
-  min-height: 200px;
+  display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
-.add-form {
-  height: 100%;
-}
-.warning {
 
+
+.add-btn {
+  width: 25%;
+  padding: 4px;
+  margin-top: 8px;
 }
