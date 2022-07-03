@@ -2,16 +2,21 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ITask } from '../model/task';
-
+import { faTrash, faPen } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-to-do',
   templateUrl: './to-do.component.html',
   styleUrls: ['./to-do.component.css']
 })
 export class ToDoComponent implements OnInit {
+  faTrash = faTrash;
+  faPen = faPen;
   toDoForm!: FormGroup;
   tasks: ITask [] = [];
-  inProgress: ITask [] = [];
+  inProgress: ITask [] = [
+    {description: "Trying to do better", done: false},
+    {description: "Learning English", done: false}
+  ];
   done: ITask [] = [];
   constructor(private formBuilder: FormBuilder) { }
 
