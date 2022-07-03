@@ -39,7 +39,6 @@ h2 {
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  cursor: move;
   background: white;
   font-size: 14px;
 }

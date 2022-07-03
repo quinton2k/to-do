@@ -2,7 +2,7 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ITask } from '../model/task';
-import { faTrash, faPen } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faPen, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-to-do',
   templateUrl: './to-do.component.html',
@@ -11,6 +11,7 @@ import { faTrash, faPen } from '@fortawesome/free-solid-svg-icons';
 export class ToDoComponent implements OnInit {
   faTrash = faTrash;
   faPen = faPen;
+  faCircleCheck = faCircleCheck
   toDoForm!: FormGroup;
   tasks: ITask [] = [];
   inProgress: ITask [] = [
@@ -33,6 +34,12 @@ export class ToDoComponent implements OnInit {
         done: false
       }
     )
+  }
+  deleteTask(i: number) {
+    this.tasks.splice(i, 1);
+  }
+  deleteInProgress(i: number) {
+    this.inProgress.splice(i, 1);
   }
   drop(event: CdkDragDrop<ITask[]>) {
     if (event.previousContainer === event.container) {
