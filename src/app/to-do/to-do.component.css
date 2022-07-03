@@ -1,3 +1,10 @@
+.container-fluid {
+  background-color: #393E46;
+  padding-top: 30px;
+}
+.row > .col-3 {
+  padding-top: 40px
+}
 h2 {
   text-align: center;
 }
@@ -62,4 +69,17 @@ h2 {
 
 .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+
+
+/* ADD */
+.add {
+  min-height: 200px;
+}
+.add-form {
+  height: 100%;
+}
+.warning {
+
 }
