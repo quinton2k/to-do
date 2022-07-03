@@ -1,14 +1,14 @@
 <div class="container-fluid">
-  <div class="row" style="background-color: #393E46;">
+  <div class="row">
     <div class="col-3" style="height: 100vh;">
-      <mat-card class="mt-2">
-        <form [formGroup]="toDoForm">
-          <mat-form-field appearance="outline">
+      <mat-card class="mt-2 add">
+        <form [formGroup]="toDoForm" class="add-form">
+          <mat-form-field appearance="outline" >
             <mat-label>What you need to-do ?</mat-label>
             <input class="input-search" autocomplete="off" formControlName="item" matInput placeholder="To-do">
           </mat-form-field>
-          <h5 *ngIf="toDoForm.invalid && toDoForm.touched">Fill in this field before adding</h5>
-          <button (click)="addTask()" color="primary" [disabled]="toDoForm.invalid">Add</button>
+          <h5 class="warning" *ngIf="toDoForm.invalid && toDoForm.touched">Fill in this field before adding</h5>
+          <button mat-raised-button (click)="addTask()" color="primary" [disabled]="toDoForm.invalid">Add</button>
         </form>
       </mat-card>
     </div>
@@ -64,6 +64,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>
