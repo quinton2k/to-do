@@ -33,7 +33,8 @@ export class ToDoComponent implements OnInit {
         description: this.toDoForm.value.item,
         done: false
       }
-    )
+    );
+    this.toDoForm.reset();
   }
   deleteTask(i: number) {
     this.tasks.splice(i, 1);
